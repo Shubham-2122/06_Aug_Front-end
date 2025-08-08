@@ -1,0 +1,38 @@
+website :- mutiple web page
+
+flow
+
+SE - Basic
+C :- 
+C++ :- oop
+Database :- store
+
+Front-end :- user view show :- client side
+ -> WD :- website design
+	:- SE :- basic
+	:-HTML :- struc
+	:- css :- design color,space,effet,
+	:- js :- slider,form
+	:- bootsrap : dumy 
+
+ -> Fremwork :- React,vue
+	API :- Fast
+	component:- reuse
+
+Back-end :- admin all data/ user peronal (hide) server side
+
+python,java,php
+dajngo,spring,larvel
+
+
+
+c :- create :- new
+r :- read :- id and password
+u :- update :- profile
+d :- delete :- remove
+
+Domain :- sever
+
+https://www.goggle.com
+
+hoting :- code
