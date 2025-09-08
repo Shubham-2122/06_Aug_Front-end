@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section{
+            height: 1000px;
+            background-color: orange;
+            border: 2px solid gray;
+            display: flex;
+        }
+        .box{
+            height: 100px;
+            width: 100px;
+            border: 2px solid;
+        }
+        /* #box1{
+            position: static;
+            top: 200px;
+        } */
+         /* #box2{
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+         } */
+          /* #box3{
+            position: sticky;
+           top: 30px;
+          } */
+
+          /* #box4{
+            position: relative;
+            top: 40px;
+            left: 40px;
+          } */
+           #box5{
+            position: relative;
+           }
+           .box1{
+            height: 25px;
+            width: 25px;
+            background: rebeccapurple;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+           }
+           .box2{
+            position: absolute;
+             height: 25px;
+            width: 25px;
+            background: green;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+           }
+    </style>
+</head>
+<body>
+    <!-- position
+        1) static :- by defualt :- top,bottom,left,right (px,rem,em,%)  not allow
+        2) fixed :- body tag :- top,bottom,left,right (px,rem,em,%) allow
+        3) stkicy :- section tag :- top,bottom,left,right (px,rem,em,%) allow
+        4) releative :- perenet :- top,bottom,left,right (px,rem,em,%) 
+        5) abosulate :- child :- top,bottom,left,right (px,rem,em,%)
+    -->
+
+    <section>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+        <div class="box" id="box4">4</div>
+        <div class="box" id="box5">
+            <div class="box1">5</div>
+            <div class="box2">6</div>
+        </div>
+        <div class="box">6</div>
+    </section>
+    <section></section>
+    <section></section>
+</body>
+</html>
