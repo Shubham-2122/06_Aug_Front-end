@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ul .list{
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: lightcoral;
+            position: relative;
+        }
+        .listul{
+            position: absolute;
+            background: aqua;
+            top: 100%;
+            left: 0px;
+            padding: 0px;
+            list-style: none;
+            display: none;
+        }
+        .list:hover .listul {
+            display: block;
+        }
+        .listul li{
+            padding: 5px 10px;
+            border: 2px solid;
+        }
+    </style>
+</head>
+<body>
+    <ul class="ul">
+        <li class="list">Home
+            <ul class="listul">
+                <li>Home 1</li>
+                <li>Home 2</li>
+                <li>Home 3</li>
+                <li>Home 4</li>
+            </ul>
+        </li>
+        <li class="list">About
+            <ul class="listul">
+                <li>About 1</li>
+                <li>About 2</li>
+                
+            </ul>
+        </li>
+        <li class="list">Help
+             <ul class="listul">
+                <li>Help 1</li>
+                <li>Help 2</li>
+                <li>Help 2</li>
+                
+                <li>Help 2</li>
+                
+                <li>Help 2</li>
+                
+                <li>Help 2</li>
+                
+                <li>Help 2</li>
+                
+            </ul>
+        </li>
+        <li class="list">Contact</li>
+    </ul>
+</body>
+</html>
