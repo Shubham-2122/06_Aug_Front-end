@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav{
+            display: flex;
+            justify-content: space-between;
+            background-color: lightcoral;
+            align-items: center;
+        }
+        ul li{
+             display: inline-block;
+            
+        padding: 10px 20px;             
+        }
+        #sec1{
+            display: flex;
+            background: aqua;
+        }
+        .box{
+            width: 25%;
+            height: 300px;
+            border: 2px solid;
+        
+        }
+        #sec2{
+            display: flex;
+            background: lightgreen;
+        }
+        .box1{
+            width: 33.33%;
+            height: 200px;
+            border: 2px solid;
+        }
+        .top,.bottom{
+            height: 50%;
+            width: 100%;
+            border: 2px solid green;
+        }
+        #box1{
+            display: flex;
+            flex-direction: column;
+        }
+        .left,.right{
+            width: 50%;
+            height: 100%;
+            border: 2px solid greenyellow;
+        }
+        #box2{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">logo</div>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+            <li>Help</li>
+        </ul>
+        <div class="icon">serch</div>
+    </nav>
+
+    <section id="sec1">
+        <div class="box">1</div>
+        <div class="box" id="box1">
+            <div class="top">top</div>
+            <div class="bottom">bottom</div>
+        </div>
+        <div class="box" id="box2">
+            <div class="left">left</div>
+            <div class="right">right</div>
+        </div>
+        <div class="box">4</div>
+    </section>
+
+    <section id="sec2">
+        <div class="box1">1</div>
+        <div class="box1">2</div>
+        <div class="box1">3</div>
+    </section>
+</body>
+</html>
