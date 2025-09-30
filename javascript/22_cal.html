@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter your num1" id="num1" >
+    <input type="text" placeholder="Enter your num2" id="num2"> <br> <br>
+    <button onclick="addsum()">Sum</button>
+    <button onclick="addsub()">sub</button>
+    <button onclick="addmul()">Mul</button>
+    <button>Divi</button>
+
+    <h1 id="h1"></h1>
+
+    <script>
+        
+        let num1 = document.getElementById("num1")
+        let num2 =  document.getElementById("num2")
+     
+        function addsum(){
+            let sum = parseInt(num1.value) + parseInt(num2.value )
+            console.log("sum => ",sum);
+            // document.writeln("sum =>",sum)
+            document.getElementById("h1").innerHTML = "sum => "+sum;
+        }
+
+          function addsub(){
+            let sum = parseInt(num1.value) - parseInt(num2.value )
+            console.log("sum => ",sum);
+            // document.writeln("sum =>",sum)
+            document.getElementById("h1").innerHTML = "sub => "+sum;
+        }
+
+          function addmul(){
+            let sum = parseInt(num1.value) * parseInt(num2.value )
+            console.log("mul => ",sum);
+            // document.writeln("sum =>",sum)
+            document.getElementById("h1").innerHTML = "mul => "+sum;
+        }
+
+
+
+    </script>
+
+
+</body>
+</html>

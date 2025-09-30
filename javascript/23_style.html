@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="h1">Hello this style using js</h1>
+
+    <button onclick="addcss()">add css</button>
+
+    <script>
+        let h1_tag = document.getElementById("h1")
+
+        // javscript style css
+        function addcss(){
+            h1_tag.style.background = "red";
+            h1_tag.style.color = "white";
+            h1_tag.style.padding = "20px";
+            h1_tag.style.fontSize = "40px"
+        }
+    </script>
+</body>
+</html>
