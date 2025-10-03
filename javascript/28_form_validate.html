@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" onsubmit="return validation()">
+        <div>
+            <input type="text" placeholder="Enter your Name" id="nm">
+            <span id="nmerr"></span>
+        </div>
+        <div>
+            <input type="text" placeholder="Enter your surname" id="snm">
+            <span id="snmerr"></span>
+        </div>
+        <div>
+            <input type="email" placeholder="Enter your Email" id="email">
+            <span id="Emailerr"></span>
+        </div>
+        <div>
+            <input type="tel" placeholder="Enter your mobile" id="mb">
+            <span id="mberr"></span>
+        </div>
+        <div>
+            <input type="password" placeholder="Enter your password" id="Psw">
+            <span id="pswerr"></span>
+        </div>
+        <div>
+            <input type="submit">
+        </div>
+    </form>
+
+    <script>
+        let name_tag = document.getElementById("nm")
+        let nmerr = document.getElementById("nmerr")
+
+        let sname = document.getElementById("snm")
+        let snmerr = document.getElementById("snmerr")
+
+        let email = document.getElementById("email")
+        let Emailerr = document.getElementById("Emailerr")
+        let mobile = document.getElementById("mb")
+        let mberr = document.getElementById("mberr")
+
+        let password = document.getElementById("psw")
+        let pswerr = document.getElementById("pswerr")
+
+
+        function validation(){
+            if(name_tag.value == "" || name_tag.value == null){
+                nmerr.innerHTML = "Pls name required.."
+                nmerr.style.color ="red"
+                return false
+            }
+            else{
+                nmerr.innerHTML = ""
+            }
+             if(sname.value == "" || sname.value == null){
+                snmerr.innerHTML = "Pls srname required.."
+                snmerr.style.color ="red"
+                return false
+            }
+            else{
+                snmerr.innerHTML = ""
+            }
+              if(email.value == "" || email.value == null){
+                Emailerr.innerHTML = "Pls Email required.."
+                Emailerr.style.color ="red"
+                return false
+            }
+            else{
+                nmerr.innerHTML = ""
+            }
+        }
+    </script>
+</body>
+
+</html>

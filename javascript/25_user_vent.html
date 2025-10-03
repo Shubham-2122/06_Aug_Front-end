@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h1" onmouseenter="enterfun()" onmouseleave="leveFun()">Hello this event</h1>
+
+    <button onclick="enterfun()">Data change</button>
+
+    <script>
+
+        let h1_tag = document.getElementById("h1")
+
+        function enterfun(){
+            h1_tag.innerText = "Hello mouse Enter"
+            h1_tag.style.background =  "red"
+        }
+
+        function leveFun(){
+               h1_tag.innerText = "Hello mouse Leave"
+            h1_tag.style.background =  "blue"         
+        }
+    </script>
+
+</body>
+</html>
