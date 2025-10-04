@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" >
+        <div>
+            <input type="text" onblur="validate(nm,nmerr)" placeholder="Enter your Name" id="nm">
+            <span id="nmerr"></span>
+        </div>
+        <div>
+            <input type="email"  onblur="validate(email,Emailerr)" placeholder="Enter your Email" id="email">
+            <span id="Emailerr"></span>
+        </div>
+        <div>
+            <input type="tel"  onblur="validate(mb,mberr)" placeholder="Enter your mobile" id="mb">
+            <span id="mberr"></span>
+        </div>
+        <div>
+            <input type="password"  onblur="validate(psw,pswerr)" placeholder="Enter your password" id="psw">
+            <span id="pswerr"></span>
+        </div>
+      
+        <div>
+            <input type="submit">
+        </div>
+    </form>
+
+    <script>
+        function validate(inp,error){
+            if(inp.value == "" || inp.value == null){
+                error.innerHTML = "pls field reuired..!";
+                error.style.color = "red";
+                inp.style.border = "2px solid red";
+                return false
+            }
+            else{
+                 error.innerHTML = "";
+                 inp.style.border = "2px solid green";
+                 return false
+            }
+        }
+    </script>
+</body>
+
+</html>

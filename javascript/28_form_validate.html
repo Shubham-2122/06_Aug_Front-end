@@ -26,8 +26,11 @@
             <span id="mberr"></span>
         </div>
         <div>
-            <input type="password" placeholder="Enter your password" id="Psw">
+            <input type="password" placeholder="Enter your password" id="psw">
             <span id="pswerr"></span>
+        </div>
+        <div>
+            <input type="password" placeholder="Enter your confrim password" id="cpsw">
         </div>
         <div>
             <input type="submit">
@@ -49,31 +52,45 @@
         let password = document.getElementById("psw")
         let pswerr = document.getElementById("pswerr")
 
+        let cpsw = document.getElementById("cpsw")
 
-        function validation(){
-            if(name_tag.value == "" || name_tag.value == null){
+
+        function validation() {
+            if (name_tag.value == "" || name_tag.value == null) {
                 nmerr.innerHTML = "Pls name required.."
-                nmerr.style.color ="red"
+                nmerr.style.color = "red"
                 return false
             }
-            else{
+            else {
                 nmerr.innerHTML = ""
             }
-             if(sname.value == "" || sname.value == null){
+            if (sname.value == "" || sname.value == null) {
                 snmerr.innerHTML = "Pls srname required.."
-                snmerr.style.color ="red"
+                snmerr.style.color = "red"
                 return false
             }
-            else{
+            else {
                 snmerr.innerHTML = ""
             }
-              if(email.value == "" || email.value == null){
+            if (email.value == "" || email.value == null) {
                 Emailerr.innerHTML = "Pls Email required.."
-                Emailerr.style.color ="red"
+                Emailerr.style.color = "red"
                 return false
             }
-            else{
+            else {
                 nmerr.innerHTML = ""
+            }
+            if (password.value == "" || password.value == null) {
+                pswerr.innerHTML = "Pls password required.."
+                pswerr.style.color = "red"
+                return false
+            }
+            else {
+                pswerr.innerHTML = ""
+            }
+            if (password.value != cpsw.value){
+                alert("password does not match");
+                return false
             }
         }
     </script>
