@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- settinterval = infinite , clearinterval  -->
+    <!-- settimeout = Time out stop -->
+
+    <script>
+
+        function test()
+        {
+            console.log("Hello interval")
+            document.writeln("Hello interval <br>")
+        }
+
+        // counter 
+        setInterval(test,2000)
+  
+        // setInterval(function(){
+        //     console.log("interval")
+        // },1000)
+
+
+        function test2(){
+            console.log("Hello Timeout ..!")
+        }
+
+
+        // setTimeout(test2,2000)
+
+        // slider 
+        setTimeout("test2()",2000)
+  </script>
+
+</body>
+</html>

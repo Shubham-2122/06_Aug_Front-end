@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            height: 400px;
+            width: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="main">
+        <img src="/img/1.jpeg" height="100%" width="100%" class="img" alt="">
+        <img src="/img/2.jpeg"  height="100%" width="100%" class="img" alt="">
+        <img src="/img/3.jpeg"  height="100%" width="100%" class="img" alt="">
+        <img src="/img/4.jpeg"  height="100%" width="100%" class="img" alt="">
+    </div>
+
+    <img src="" alt="">
+    
+
+    <script>
+
+        // let img_tag = document.getElementsByTagName("img")
+        // console.log(img_tag)
+
+
+        let img_tag = document.getElementsByClassName("img")
+        console.log(img_tag)
+
+        // console.log(img_tag[1])
+
+        let index = 0
+
+        function slider()
+        {
+            // all tag remove side
+            for(let i=0;i<img_tag.length;i++)
+            {
+                // console.log(img_tag[i])
+                img_tag[i].style.display = "none"
+            }
+            img_tag[index].style.display ="block"
+            index++;
+
+
+            if(index == 4)
+            {
+                index = 0
+            }
+
+            setTimeout(slider,1000)
+
+        }
+        slider()
+
+        // addEventListener("onclick",()=>{
+        //     console.log("arr")
+        // })
+
+    </script>
+
+    <!-- <button>next image</button> -->
+</body>
+</html>
