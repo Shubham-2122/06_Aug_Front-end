@@ -14,10 +14,35 @@
         console.log(arr)
 
         // value[index]
-        console.log(arr[5])
-        console.log(arr[8])
+        // console.log(arr[5])
+        // console.log(arr[8])
 
         // for loop
+
+        // simple for loop index,value
+        // for(let i=0;i<arr.length;i++){
+        //     console.log(i)
+        //     console.log(arr[i])
+        //     console.log(i," => ",arr[i])
+        // }
+
+        // for of value
+        // for(let data of arr){
+        //     console.log(data)
+        // }
+
+        // for in index arfter value
+        // for(let data in arr){
+        //     console.log(data)
+        //     console.log(arr[data])
+        // }
+
+        // forEach  index,value
+        arr.forEach((value,index)=>{
+            console.log(value)
+            console.log(index)
+            document.writeln(`<h4>${index} : ${value}</h4>`)
+        })
 
     </script>
 </body>
