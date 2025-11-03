@@ -27,7 +27,7 @@
 
     <script>
 
-        // var blance = 1000;
+        var blance = 1000;
 
         class Bank{
             // member function
@@ -46,7 +46,10 @@
                 console.log("Pin nmber : ",pinnum)
                 console.log("bank balnce : ",bankblance)
             }
-            y = function Deposit(){
+            y = function Deposit(add){
+
+                blance = blance + add;
+                parseInt(blance)
                 console.log("hello this deposit function")
             }
         }
