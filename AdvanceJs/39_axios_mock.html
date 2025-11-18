@@ -20,8 +20,41 @@
                 document.write(`<h2>id : ${data.id} name : ${data.name} email : ${data.email}</h2>`)
             }
         }
+        // getuser()
 
-        getuser()
+        let person = {
+            name : "mohit",
+            email:"mohit@gmail.com",
+            pasword:"1234",
+            city : "ahemdabad"
+        }
+
+        const createuser = async()=>{
+            const res = await axios.post("https://660d95e36ddfa2943b34c530.mockapi.io/users",person)
+            console.log(res.data)
+        }
+        // createuser()
+
+        const deleteuser = async()=>{
+            const res = await axios.delete(`https://660d95e36ddfa2943b34c530.mockapi.io/users/6`)
+            console.log(res.data)
+        }
+        // deleteuser()
+
+
+        let person1={
+            id:"5",
+            name : "shubham sir",
+            email :"shubham@gmail.com"
+        }
+
+        const updateuser =async()=>{
+            const res = await axios.put(`https://660d95e36ddfa2943b34c530.mockapi.io/users/${person1.id}`,person1)
+            console.log(res.data)
+        }
+        updateuser()
+
+
 
     </script>
 
