@@ -1,0 +1,66 @@
+React :- javascript framwork / lib 
+Fast React node 
+node javascript runtime evnrimonet
+
+package 
+	1)local
+	2)global
+	3)3rdparty
+
+React :- single page
+	Resuse component :- header ,footer
+	React do not refresh a page
+
+React virtual dom
+	real dom as well as copy 
+
+
+1) node install
+	cmd :  node -v
+	 node 20.10.0
+
+2) npm :- node package managar
+
+
+3) npm vs npx
+	npm :- global
+	npx :- extribile
+
+4) react app install :- 
+	-> npx create-react-app app-name
+	-> cd app-name
+	-> npm start
+
+5) new Vite+react
+	cmd : npm create vite@latest my-react-app 
+	cmd : cd app-name
+	cmd : npm run dev
+
+React folder stru
+	1) node module :- npm install
+	2) public: index.html , static image
+	3) src : index.js , App.js
+	4) package.json , package-lock.json
+
+vit+react stru 
+	1) node module	
+	2) public
+	3) src : main.jsx ,App,jsx
+
+
+html -> js 
+js -> html
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
