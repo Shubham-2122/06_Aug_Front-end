@@ -1,7 +1,9 @@
 import React from "react";
 // import ClassCompo from "./Component/ClassCompo";
 // import FuncCompo from "./Component/FuncCompo";
-import Hello from "./jsx/Hello";
+// import Hello from "./jsx/Hello";
+// import Style from "./style/Style";
+import MainProps from "./Props/MainProps";
 
 function App() {
     return (
@@ -12,7 +14,13 @@ function App() {
             {/* <FuncCompo /> */}
 
             {/* jsx  */}
-            <Hello />
+            {/* <Hello /> */}
+
+            {/* style */}
+            {/* <Style /> */}
+
+            {/* props */}
+            <MainProps />
 
 
         </div>

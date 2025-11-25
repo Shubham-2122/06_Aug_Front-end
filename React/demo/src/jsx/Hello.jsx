@@ -4,6 +4,7 @@
 // jsx vs js : 0.1 s fast
 // jsx console
 // varibale ,state : {}
+// <></> fregment
 
 import React from 'react'
 
@@ -26,8 +27,8 @@ function Hello() {
     </ol>
 
   return (
-    <div>
-      <h1>Hello this Jsx Component</h1>
+    <>
+      <h1 >Hello this Jsx Component</h1>
         <h1>hello name : {name}</h1>
 
         <h1>hello course : {perosn.course}</h1>
@@ -35,11 +36,10 @@ function Hello() {
         <h2>{10+29}</h2>
         {htmldata}
 
-
         {
             console.log("hebjhbuj")
         }
-    </div>
+    </>
   )
 }
 
