@@ -1,11 +1,15 @@
 import React from 'react'
-import ClassState from './ClassState'
+// import ClassState from './ClassState'
+// import FunState from './FunState'
+import Funcob from './Funcob'
 
 function MainState() {
   return (
     <div>
       <h1>Hello this state read</h1>
-      <ClassState />
+      {/* <ClassState /> */}
+      {/* <FunState /> */}
+      <Funcob />
     </div>
   )
 }

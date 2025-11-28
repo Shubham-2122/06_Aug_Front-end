@@ -5,6 +5,7 @@
 
 
 import React, { Component } from 'react'
+import Image from './Image';
 
 class ClassState extends Component {
     constructor(){
@@ -33,6 +34,14 @@ class ClassState extends Component {
        <button onClick={()=>this.setState({count : this.state.count - 1 })}>Decrement</button>
 
        <button onClick={()=>this.setState({count : 0})}>Zero</button>
+
+      <br /><br />
+      <button onClick={()=>this.setState({isImage : false})}>Hide</button>
+      <button onClick={()=>this.setState({isImage:true})}>Show</button>
+      <button onClick={()=>this.setState({isImage:!this.state.isImage})}>Toggle</button>
+        {
+          (this.state.isImage)?<Image /> : false
+        }
 
       </div>
     )
