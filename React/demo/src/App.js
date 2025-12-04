@@ -7,6 +7,7 @@ import React from "react";
 // import MainState from "./State/MainState";
 import UseAx from "./Useeffect/UseAx";
 import UseCard from "./Useeffect/UseCard";
+import MainData from "./context/MainData";
 
 function App() {
     return (
@@ -28,7 +29,10 @@ function App() {
             {/* state */}
             {/* <MainState /> */}
             {/* <UseAx /> */}
-            <UseCard />
+            {/* <UseCard /> */}
+
+            {/* context */}
+            <MainData />
 
 
         </div>
