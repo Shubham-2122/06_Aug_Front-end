@@ -3,6 +3,11 @@ import Boots from "./Boots/Boots";
 import ReacData from "./Boots/ReacData";
 import Footer from "./Boots/Footer";
 import Login from "./Boots/Login";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./Layout/Pages/Home";
+import About from "./Layout/Pages/About";
+import Contact from "./Layout/Pages/Contact";
+import NotFound from "./Layout/Pages/NotFound";
 // import ClassCompo from "./Component/ClassCompo";
 // import FuncCompo from "./Component/FuncCompo";
 // import Hello from "./jsx/Hello";
@@ -15,6 +20,7 @@ import Login from "./Boots/Login";
 
 function App() {
     return (
+        <BrowserRouter>
         <div>
             {/* <h1>Hello this app page</h1> */}
             {/* component */}
@@ -43,8 +49,17 @@ function App() {
             {/* <Footer /> */}
             {/* <Login /> */}
 
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                 <Route path="/contact" element={<Contact />} />
+
+                 <Route path="*" element={<NotFound />} />
+            </Routes>
+
 
         </div>
+        </BrowserRouter>
     )
 }
 
