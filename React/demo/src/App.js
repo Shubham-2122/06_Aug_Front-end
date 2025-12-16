@@ -8,6 +8,9 @@ import Home from "./Layout/Pages/Home";
 import About from "./Layout/Pages/About";
 import Contact from "./Layout/Pages/Contact";
 import NotFound from "./Layout/Pages/NotFound";
+import About1 from "./Layout/Pages/About1";
+import AboutD2 from "./Layout/Pages/AboutD2";
+import LifeData from "./LifeData";
 // import ClassCompo from "./Component/ClassCompo";
 // import FuncCompo from "./Component/FuncCompo";
 // import Hello from "./jsx/Hello";
@@ -51,8 +54,12 @@ function App() {
 
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                 <Route path="/contact" element={<Contact />} />
+                <Route path="/about" element={<About />} >
+                    <Route path="about1" element={<About1 />} />
+                     <Route path="about2" element={<AboutD2 />} />
+                </Route>
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/life" element={<LifeData />} />
 
                  <Route path="*" element={<NotFound />} />
             </Routes>
