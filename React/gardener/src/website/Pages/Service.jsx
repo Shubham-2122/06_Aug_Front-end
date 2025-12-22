@@ -1,9 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../Coman/Header'
 import Pages from '../Coman/Pages'
 import Footer from '../Coman/Footer'
+import axios from 'axios'
 
 function Service() {
+
+    const [service, setservice] = useState([])
+
+    useEffect(() => {
+        fetchdata()
+    }, [])
+
+    const fetchdata = async () => {
+        const res = await axios.get("http://localhost:3000/services")
+        console.log(res.data)
+        setservice(res.data)
+    }
+
     return (
         <div>
             <Header />
@@ -16,96 +30,29 @@ function Service() {
                         <h1 className="display-5 mb-5">Services That We Offer For You</h1>
                     </div>
                     <div className="row g-4">
-                        <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                            <div className="service-item rounded d-flex h-100">
-                                <div className="service-img rounded">
-                                    <img className="img-fluid" src="img/service-1.jpg" alt />
-                                </div>
-                                <div className="service-text rounded p-5">
-                                    <div className="btn-square rounded-circle mx-auto mb-3">
-                                        <img className="img-fluid" src="img/icon/icon-3.png" alt="Icon" />
+                        {
+                            service && service.map((data, index) => {
+                                return (
+                                    <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" key={index}>
+                                        <div className="service-item rounded d-flex h-100">
+                                            <div className="service-img rounded">
+                                                <img className="img-fluid" src={data.img} alt />
+                                            </div>
+                                            <div className="service-text rounded p-5">
+                                                <div className="btn-square rounded-circle mx-auto mb-3" style={{overflow:"hidden"}}>
+                                                    <img className="img-fluid"  src={data.logo} alt="Icon" />
+                                                </div>
+                                                <h4 className="mb-3">{data.name}</h4>
+                                                <p className="mb-4">{data.desc}</p>
+                                                <a className="btn btn-sm" href><i className="fa fa-plus text-primary me-2" />Read More</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <h4 className="mb-3">Landscaping</h4>
-                                    <p className="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                                    <a className="btn btn-sm" href><i className="fa fa-plus text-primary me-2" />Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                            <div className="service-item rounded d-flex h-100">
-                                <div className="service-img rounded">
-                                    <img className="img-fluid" src="img/service-2.jpg" alt />
-                                </div>
-                                <div className="service-text rounded p-5">
-                                    <div className="btn-square rounded-circle mx-auto mb-3">
-                                        <img className="img-fluid" src="img/icon/icon-6.png" alt="Icon" />
-                                    </div>
-                                    <h4 className="mb-3">Pruning plants</h4>
-                                    <p className="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                                    <a className="btn btn-sm" href><i className="fa fa-plus text-primary me-2" />Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                            <div className="service-item rounded d-flex h-100">
-                                <div className="service-img rounded">
-                                    <img className="img-fluid" src="img/service-3.jpg" alt />
-                                </div>
-                                <div className="service-text rounded p-5">
-                                    <div className="btn-square rounded-circle mx-auto mb-3">
-                                        <img className="img-fluid" src="img/icon/icon-5.png" alt="Icon" />
-                                    </div>
-                                    <h4 className="mb-3">Irrigation &amp; Drainage</h4>
-                                    <p className="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                                    <a className="btn btn-sm" href><i className="fa fa-plus text-primary me-2" />Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                            <div className="service-item rounded d-flex h-100">
-                                <div className="service-img rounded">
-                                    <img className="img-fluid" src="img/service-4.jpg" alt />
-                                </div>
-                                <div className="service-text rounded p-5">
-                                    <div className="btn-square rounded-circle mx-auto mb-3">
-                                        <img className="img-fluid" src="img/icon/icon-4.png" alt="Icon" />
-                                    </div>
-                                    <h4 className="mb-3">Garden Maintenance </h4>
-                                    <p className="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                                    <a className="btn btn-sm" href><i className="fa fa-plus text-primary me-2" />Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                            <div className="service-item rounded d-flex h-100">
-                                <div className="service-img rounded">
-                                    <img className="img-fluid" src="img/service-5.jpg" alt />
-                                </div>
-                                <div className="service-text rounded p-5">
-                                    <div className="btn-square rounded-circle mx-auto mb-3">
-                                        <img className="img-fluid" src="img/icon/icon-8.png" alt="Icon" />
-                                    </div>
-                                    <h4 className="mb-3">Green Technology</h4>
-                                    <p className="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                                    <a className="btn btn-sm" href><i className="fa fa-plus text-primary me-2" />Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                            <div className="service-item rounded d-flex h-100">
-                                <div className="service-img rounded">
-                                    <img className="img-fluid" src="img/service-6.jpg" alt />
-                                </div>
-                                <div className="service-text rounded p-5">
-                                    <div className="btn-square rounded-circle mx-auto mb-3">
-                                        <img className="img-fluid" src="img/icon/icon-2.png" alt="Icon" />
-                                    </div>
-                                    <h4 className="mb-3">Urban Gardening</h4>
-                                    <p className="mb-4">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</p>
-                                    <a className="btn btn-sm" href><i className="fa fa-plus text-primary me-2" />Read More</a>
-                                </div>
-                            </div>
-                        </div>
+
+                                )
+                            })
+                        }
+
                     </div>
                 </div>
             </div>
