@@ -40,9 +40,14 @@ function Aheader() {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarCollapse">
                         <div className="navbar-nav ms-auto p-4 p-lg-0">
-                            {/* <NavLink to="/" className="nav-item nav-link ">Home</NavLink> */}
-                            {/* <NavLink to="/about" className="nav-item nav-link">About</NavLink> */}
-                            <NavLink to="/serviceMange" className="nav-item nav-link">Services</NavLink>
+                        
+                             <div className="nav-item dropdown">
+                                <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Service</a>
+                                <div className="dropdown-menu bg-light m-0">
+                                    <NavLink to="/serviceMange" className="dropdown-item">Manage</NavLink>
+                                    <NavLink to="/serviceadd" className="dropdown-item">Service Add</NavLink>
+                                </div>
+                            </div>
                             <NavLink to="/project" className="nav-item nav-link">Projects</NavLink>
                             <div className="nav-item dropdown">
                                 <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
