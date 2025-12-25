@@ -3,6 +3,7 @@ import Aheader from '../Acoman/Aheader'
 import Apages from '../Acoman/Apages'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 function ServiceAdd() {
 
@@ -28,8 +29,13 @@ function ServiceAdd() {
     const submitedSer = async (e) => {
         e.preventDefault();
 
+        if(service.name == "" || service.img == "" || service.logo == "" || service.desc == ""){
+            console.log("pls field data..");
+            toast.error('pls field data..')
+            return false;
+        }
+
         const res = await axios.post("http://localhost:3000/services", service)
-        console.log(res.data)
         redirect("/serviceMange")
         setservice({
             id: "",
@@ -38,6 +44,7 @@ function ServiceAdd() {
             logo: "",
             desc: ""
         })
+        toast.success('service add succssfully');
     }
 
     // Crud : r : all product : c : new data 

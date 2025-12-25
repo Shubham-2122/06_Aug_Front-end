@@ -13,11 +13,27 @@ import Contact from './website/Pages/Contact'
 import Dashboard from './admin/Apages/Dashboard'
 import ServiceMange from './admin/Apages/ServiceMange'
 import ServiceAdd from './admin/Apages/ServiceAdd'
+import { Bounce, ToastContainer } from 'react-toastify'
 
 function App() {
   return (
     <BrowserRouter>
       <div>
+
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick={false}
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+          transition={Bounce}
+        />
+
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
@@ -34,8 +50,8 @@ function App() {
           {/* admin  */}
 
           <Route path='/dash' element={<Dashboard />} />
-            <Route path='/serviceMange' element={<ServiceMange />} />
-            <Route path='/serviceadd' element={<ServiceAdd />} />
+          <Route path='/serviceMange' element={<ServiceMange />} />
+          <Route path='/serviceadd' element={<ServiceAdd />} />
 
         </Routes>
       </div>
