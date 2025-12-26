@@ -49,36 +49,7 @@ function ServiceMange() {
 
       <div className="container">
         <h1>hello this Service ManageMent</h1>
-        <table className="table my-5">
-          <thead>
-            <tr className='text-center'>
-              <th scope="col">#id</th>
-              <th scope="col">Name</th>
-              <th scope="col">Imgae</th>
-              <th scope="col">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              service && service.map((data, index) => {
-                // console.log(data)
-                return (
-                  <tr className='text-center' key={index}>
-                    <th scope="row">{data.id}</th>
-                    <td>{data.name}</td>
-                    <td><img src={data.img} style={{ width: "100px" }} alt="" /></td>
-                    <td>
-                      <button className='btn btn-info' data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => singlservice(data.id)}>View</button>
-                      <button className='btn btn-success mx-2'>Edit</button>
-                      <button className='btn btn-danger' onClick={()=>deleteservice(data.id)}>Delete</button>
-                    </td>
-                  </tr>
-                )
-              })
-            }
-
-          </tbody>
-        </table>
+       
         <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div className="modal-dialog">
             <div className="modal-content">

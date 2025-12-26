@@ -48,5 +48,25 @@
       "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUCcNUdwtRRIdsuZOoWdaizi-5hVEy4XKKWQ&s",
       "desc": "asdfas fdwar ase fdhalsiefj laeow; oaido;k asd;ofijpaosdjiop"
     }
+  ],
+  "team": [
+    {
+      "id": "1",
+      "name": "Johnny Ramirez",
+      "role": "garder design",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNex827WbEbrjRv2bc4T37I0ZbdsyiFSMKBg&s"
+    },
+    {
+      "id": "2",
+      "name": "Doris Jordan",
+      "role": "Landscape Designer",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLL_1QiAjhgvIxrUs-bkCrkdinCRJImNsr2w&s"
+    },
+    {
+      "id": "1766752097883",
+      "name": "shubham jadav",
+      "role": "garde role design",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLRex9i4I7uc-UUCer8Z8IOFOhUuvJIp3cCA&s"
+    }
   ]
 }

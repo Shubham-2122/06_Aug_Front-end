@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../Coman/Header'
 import Pages from '../Coman/Pages'
 import Footer from '../Coman/Footer'
+import axios from 'axios'
 
 function Team() {
+
+
+    const [team, setteam] = useState([])
+
+    useEffect(() => {
+        fetchdata()
+    }, [])
+
+    const fetchdata = async () => {
+        const res = await axios.get("http://localhost:3000/team")
+        console.log(res.data)
+        setteam(res.data)
+    }
+
     return (
         <div>
             <Header />
@@ -16,48 +31,27 @@ function Team() {
                         <h1 className="display-5 mb-5">Dedicated &amp; Experienced Team Members</h1>
                     </div>
                     <div className="row g-4">
-                        <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                            <div className="team-item rounded">
-                                <img className="img-fluid" src="img/team-1.jpg" alt />
-                                <div className="team-text">
-                                    <h4 className="mb-0">Doris Jordan</h4>
-                                    <p className="text-primary">Landscape Designer</p>
-                                    <div className="team-social d-flex">
-                                        <a className="btn btn-square rounded-circle me-2" href><i className="fab fa-facebook-f" /></a>
-                                        <a className="btn btn-square rounded-circle me-2" href><i className="fab fa-twitter" /></a>
-                                        <a className="btn btn-square rounded-circle me-2" href><i className="fab fa-instagram" /></a>
+                        {
+                            team && team.map((data, index) => {
+                                return (
+                                    <div key={index} className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                        <div className="team-item rounded">
+                                            <img className="img-fluid" src={data.img} style={{ height: "350px" }} alt />
+                                            <div className="team-text">
+                                                <h4 className="mb-0">{data.name}</h4>
+                                                <p className="text-primary">{data.role}</p>
+                                                <div className="team-social d-flex">
+                                                    <a className="btn btn-square rounded-circle me-2" href><i className="fab fa-facebook-f" /></a>
+                                                    <a className="btn btn-square rounded-circle me-2" href><i className="fab fa-twitter" /></a>
+                                                    <a className="btn btn-square rounded-circle me-2" href><i className="fab fa-instagram" /></a>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                            <div className="team-item rounded">
-                                <img className="img-fluid" src="img/team-2.jpg" alt />
-                                <div className="team-text">
-                                    <h4 className="mb-0">Johnny Ramirez</h4>
-                                    <p className="text-primary">Garden Designer</p>
-                                    <div className="team-social d-flex">
-                                        <a className="btn btn-square rounded-circle me-2" href><i className="fab fa-facebook-f" /></a>
-                                        <a className="btn btn-square rounded-circle me-2" href><i className="fab fa-twitter" /></a>
-                                        <a className="btn btn-square rounded-circle me-2" href><i className="fab fa-instagram" /></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                            <div className="team-item rounded">
-                                <img className="img-fluid" src="img/team-3.jpg" alt />
-                                <div className="team-text">
-                                    <h4 className="mb-0">Diana Wagner</h4>
-                                    <p className="text-primary">Senior Gardener</p>
-                                    <div className="team-social d-flex">
-                                        <a className="btn btn-square rounded-circle me-2" href><i className="fab fa-facebook-f" /></a>
-                                        <a className="btn btn-square rounded-circle me-2" href><i className="fab fa-twitter" /></a>
-                                        <a className="btn btn-square rounded-circle me-2" href><i className="fab fa-instagram" /></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                )
+                            })
+                        }
+
                     </div>
                 </div>
             </div>
