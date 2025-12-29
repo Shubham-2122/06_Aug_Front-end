@@ -20,12 +20,12 @@ function ServiceMange() {
   }, [])
 
   // single data show state
-  const [data,setdata] = useState({
+  const [data, setdata] = useState({
     id: "",
-            name: "",
-            img: "",
-            logo: "",
-            desc: ""
+    name: "",
+    img: "",
+    logo: "",
+    desc: ""
   })
   // single product get
   const singlservice = async (id) => {
@@ -35,21 +35,142 @@ function ServiceMange() {
   }
 
   // delete service
-  const deleteservice =async(id)=>{
+  const deleteservice = async (id) => {
     const res = await axios.delete(`http://localhost:3000/services/${id}`)
-    console.log(res.data)
+    // console.log(res.data)
     fetchdata()
     toast.success('service deleted..')
   }
 
+  // state model
+  const [edit, setedit] = useState(null)
+  // state show
+  const [edited, setedited] = useState({
+    id: "",
+    name: "",
+    img: "",
+    logo: "",
+    desc: ""
+  })
+
+  const opendata = (data) => {
+    console.log(data)
+    setedit(data)
+    setedited(data)
+  }
+
+  const getchange = (e) => {
+    setedited({
+      ...edited,
+      [e.target.name]: e.target.value
+    })
+    console.log(edited)
+  }
+
+  const getupdate = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.put(`http://localhost:3000/services/${edited.id}`, edited)
+      console.log(res.data)
+      toast.success('service updeted..')
+      setedited({
+        id: "",
+        name: "",
+        img: "",
+        logo: "",
+        desc: ""
+      })
+      setedit(null)
+      fetchdata()
+    } catch (error) {
+      console.log("Api data not Found..", error)
+    }
+  }
   return (
     <div>
       <Aheader />
       <Apages title="Service Managmenet" data="Service" />
 
+
       <div className="container">
         <h1>hello this Service ManageMent</h1>
-       
+        <table className="table my-5">
+          <thead>
+            <tr className='text-center'>
+              <th scope="col">#id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Imgae</th>
+              <th scope="col">Action</th>
+            </tr>
+
+          </thead>
+          <tbody>
+            {
+              service && service.map((data, index) => {
+                return (
+                  <tr scope="row" key={index} className='text-center'>
+                    <td>{data.id}</td>
+                    <td>{data.name}</td>
+                    <td>
+                      <img src={data.img} style={{ width: "100px" }} alt="" />
+                    </td>
+                    <td>
+                      <button className='btn btn-info' data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => singlservice(data.id)}>View</button>
+                      <button className='btn btn-success mx-2' onClick={() => opendata(data)}>Edit</button>
+                      <button className='btn btn-danger' onClick={() => deleteservice(data.id)}>Delete</button>
+                    </td>
+                  </tr>
+                )
+              })
+            }
+
+          </tbody>
+        </table>
+
+        {
+          edit && (
+            <div className="container">
+              <div className="row my-5">
+                <div className="col-12 wow fadeIn" data-wow-delay="0.1s">
+                  <p className="fs-2 text-center fw-bold text-primary">Service update</p>
+                  <form >
+                    <div className="row g-3">
+                      <div className="col-12">
+                        <div className="form-floating">
+                          <input type="text" onChange={getchange} value={edited.name} name='name' className="form-control" id="name" placeholder="Your Name" />
+                          <label htmlFor="name">Your Name</label>
+                        </div>
+                      </div>
+                      <div className="col-6">
+                        <div className="form-floating">
+                          <input type="url" onChange={getchange} value={edited.img} name='img' className="form-control" id="image" placeholder="your images" />
+                          <label htmlFor="image">your images</label>
+                        </div>
+                      </div>
+                      <div className="col-6">
+                        <div className="form-floating">
+                          <input type="url" onChange={getchange} value={edited.logo} name='logo' className="form-control" id="logo" placeholder="your logo" />
+                          <label htmlFor="logo">your logo</label>
+                        </div>
+                      </div>
+                      <div className="col-12">
+                        <div className="form-floating">
+                          <textarea className="form-control" onChange={getchange} value={edited.desc} name='desc' placeholder="your descrition" id="message" style={{ height: 100 }} defaultValue={""} />
+                          <label htmlFor="message">your descrition</label>
+                        </div>
+                      </div>
+                      <div className="col-12">
+                        <button className="btn btn-primary py-3 px-4" onClick={getupdate} type="submit">Service update</button>
+                        <button className="btn btn-primary py-3 px-4 mx-2" onClick={() => setedit(null)} type="submit">Service cancle</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          )
+        }
+
         <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div className="modal-dialog">
             <div className="modal-content">
