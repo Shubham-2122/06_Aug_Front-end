@@ -1,7 +1,24 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 function Aheader() {
+
+    const redirect =useNavigate()
+
+    useEffect(()=>{
+        if(!localStorage.getItem("Aid")){
+            redirect("/alogin")
+        }
+    })
+
+    const logout=()=>{
+        localStorage.removeItem("Aid")
+        localStorage.removeItem("Aname")
+        redirect("/alogin")
+        toast.success("Successfully logout")
+    }
+
   return (
     <div>
       <div>
@@ -65,9 +82,30 @@ function Aheader() {
                                     <NavLink to="/test" className="dropdown-item">Testimonial</NavLink>
                                 </div>
                             </div>
-                            <NavLink to="/contact" className="nav-item nav-link">Contact</NavLink>
+                            {
+                                (()=>{
+                                    if(localStorage.getItem("Aid")){
+                                        return(
+                                            <Link  className="nav-item nav-link">hello. {localStorage.getItem("Aname")}</Link>
+                                        )
+                                    }
+                                })()
+                            }
+
+                            {
+                                (()=>{
+                                    if(localStorage.getItem("Aid")){
+                                        return(
+                                            <Link onClick={logout} className="nav-item nav-link">Alogout</Link>
+                                        )
+                                    }
+                                    else{
+                                        <Link to="/alogin" className="nav-item nav-link">Aloign</Link>
+                                    }
+                                })()
+                            }
                         </div>
-                        <a href className="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block">Get A Quote<i className="fa fa-arrow-right ms-3" /></a>
+                       
                     </div>
                 </nav>
                 {/* Navbar End */}

@@ -16,6 +16,7 @@ import ServiceAdd from './admin/Apages/ServiceAdd'
 import { Bounce, ToastContainer } from 'react-toastify'
 import TeamManage from './admin/Apages/TeamManage'
 import TeamAdd from './admin/Apages/TeamAdd'
+import Alogin from './admin/Apages/Alogin'
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
           <Route path='/serviceadd' element={<ServiceAdd />} />
           <Route path='/teammanage' element={<TeamManage />} />
           <Route path='/teamadd' element={<TeamAdd />} />
+          <Route path='/alogin' element={<Alogin />} />
 
         </Routes>
       </div>
