@@ -61,5 +61,31 @@
       "role": "garde role design",
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLRex9i4I7uc-UUCer8Z8IOFOhUuvJIp3cCA&s"
     }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "user",
+      "email": "user@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "2",
+      "name": "user1",
+      "email": "user1@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "3",
+      "name": "user3",
+      "email": "user3@gmail.com",
+      "password": "1234567"
+    },
+    {
+      "id": "1767442211484",
+      "name": "shubham",
+      "email": "shubham@gmail.com",
+      "password": "123456"
+    }
   ]
 }

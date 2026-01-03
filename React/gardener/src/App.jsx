@@ -17,6 +17,8 @@ import { Bounce, ToastContainer } from 'react-toastify'
 import TeamManage from './admin/Apages/TeamManage'
 import TeamAdd from './admin/Apages/TeamAdd'
 import Alogin from './admin/Apages/Alogin'
+import Login from './website/Pages/Login'
+import Register from './website/Pages/Register'
 
 function App() {
   return (
@@ -47,6 +49,8 @@ function App() {
           <Route path='/team' element={<Team />} />
           <Route path='/test' element={<Test />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/login' element={<Login />} />
+           <Route path='/newdata' element={<Register />} />
 
           <Route path='*' element={<Not />} />
 
