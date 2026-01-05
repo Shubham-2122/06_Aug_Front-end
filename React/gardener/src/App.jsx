@@ -19,6 +19,7 @@ import TeamAdd from './admin/Apages/TeamAdd'
 import Alogin from './admin/Apages/Alogin'
 import Login from './website/Pages/Login'
 import Register from './website/Pages/Register'
+import Edit from './website/Pages/Edit'
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/login' element={<Login />} />
            <Route path='/newdata' element={<Register />} />
+           <Route path='/Editdata' element={<Edit />} />
 
           <Route path='*' element={<Not />} />
 
