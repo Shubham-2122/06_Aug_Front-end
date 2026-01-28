@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "user1",
+      "email": "user@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "2",
+      "name": "user2",
+      "email": "user2@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "3",
+      "name": "user3",
+      "email": "user3@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "1769598899105",
+      "name": "shubham jadav",
+      "email": "shubhamjadav.tops@gmail.com",
+      "password": "shuajh435"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "product1",
+      "img": "",
+      "desc": "jsahgdkuh",
+      "price": "200"
+    },
+    {
+      "id": "2",
+      "name": "product2",
+      "img": "",
+      "desc": "jsahg sd dw dkuh",
+      "price": "100"
+    }
+  ]
+}
