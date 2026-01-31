@@ -28,6 +28,30 @@ export const NewUser = createAsyncThunk(
     }
 )
 
+export const deletUser = createAsyncThunk(
+    'deletUser',
+    async (id, { rejectWithValue }) => {
+        try {
+            await axios.delete(`http://localhost:3000/users/${id}`)
+            return id
+        } catch (error) {
+            return rejectWithValue(error)
+        }
+    }
+)
+
+
+export const EditUser = createAsyncThunk(
+    'EditUser', async (data, { rejectWithValue }) => {
+        try {
+            const res = await axios.put(`http://localhost:3000/users/${data.id}`, data)
+            const result = await res.data
+            return result;
+        } catch (error) {
+            return rejectWithValue(error)
+        }
+    }
+)
 
 export const userSlice = createSlice({
     name: "userDetails",
@@ -73,6 +97,39 @@ export const userSlice = createSlice({
                 state.users.push(action.payload)
             })
             .addCase(NewUser.rejected, (state, action) => {
+                state.loading = false
+                state.error = action.payload
+            })
+
+            // delete case
+            .addCase(deletUser.pending, (state, action) => {
+                state.loading = true
+            })
+            .addCase(deletUser.fulfilled, (state, action) => {
+                state.loading = false;
+                state.users = state.users.filter(
+                    (user) => user.id !== action.payload
+                );
+            })
+
+            .addCase(deletUser.rejected, (state, action) => {
+                state.loading = false
+                state.error = action.payload
+            })
+
+            // edit data
+
+            .addCase(EditUser.pending, (state, action) => {
+                state.loading = true
+            })
+            .addCase(EditUser.fulfilled, (state, action) => {
+                state.loading = false;
+
+                state.users = state.users.map((data) =>
+                    data.id === action.payload.id ? action.payload : data
+                );
+            })
+            .addCase(EditUser.rejected, (state, action) => {
                 state.loading = false
                 state.error = action.payload
             })

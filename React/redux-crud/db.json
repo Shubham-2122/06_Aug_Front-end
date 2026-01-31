@@ -1,28 +1,22 @@
 {
   "users": [
     {
-      "id": "1",
-      "name": "user1",
-      "email": "user@gmail.com",
-      "password": "123456"
-    },
-    {
-      "id": "2",
-      "name": "user2",
-      "email": "user2@gmail.com",
-      "password": "1234"
-    },
-    {
-      "id": "3",
-      "name": "user3",
-      "email": "user3@gmail.com",
-      "password": "12345678"
-    },
-    {
-      "id": "1769598899105",
-      "name": "shubham jadav",
+      "id": "1769857306324",
+      "name": "shubham",
       "email": "shubhamjadav.tops@gmail.com",
-      "password": "shuajh435"
+      "password": "asfdsadf"
+    },
+    {
+      "id": "1769858160331",
+      "name": "sujal jadav",
+      "email": "shubhaj@gmail.com",
+      "password": "sdjfhkju"
+    },
+    {
+      "id": "1769858165842",
+      "name": "Shubham jadav",
+      "email": "shubhamjadav.tops@gmail.com",
+      "password": "sadsadasd"
     }
   ],
   "products": [
